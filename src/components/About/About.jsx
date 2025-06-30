@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './About.module.css';
-import tv from '../../assets/Image/TV.JPG'
+import tv from '../../assets/Image/TV.jpg'
 import mobil from '../../assets/Image/mobile movie screen.png'
 import appStore from '../../assets/Image/appstore.png'
 import { Lang } from '../../lang.jsx';
