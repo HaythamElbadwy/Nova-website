@@ -26,7 +26,7 @@ function App() {
     const getStripeKey = async () => {
       try {
         const response = await fetch(
-          "https://nova-psi-five.vercel.app/apiKey/getPublishableKey",
+          "https://novatv.onrender.com/apiKey/getPublishableKey",
           {
             method: "GET",
             headers: {

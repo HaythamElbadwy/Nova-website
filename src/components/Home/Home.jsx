@@ -44,7 +44,7 @@ export default function Home() {
 
 
     try {
-      const response = await fetch('https://nova-psi-five.vercel.app/user/login', {
+      const response = await fetch('https://novatv.onrender.com/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -109,69 +109,70 @@ export default function Home() {
     <>
       {isLoader ? <Loader /> : <>
         <section className={classes.home} id="home">
-          <div className={classes.layout}></div>
-          <div className="text-white h-full lg:h-screen p-6 lg:p-16 flex justify-center items-center flex-col">
-            {isLoggedIn ? null :
-              <h1 className={`${classes.managePlaylist_title} text-2xl lg:text-3xl text-center mt-[2rem]`}>{langValue['ManagePlaylist']}</h1>
-            }
-            <div className={`container h-full ${isLoggedIn ? `text-center lg:mt-44 ${classes.wish_responive}` : ''}`}>
+          <div className={classes.layout}>
+            <div className="text-white h-full lg:h-screen p-6 lg:p-16 flex justify-center items-center flex-col">
               {isLoggedIn ? null :
-                <div className={`${classes.macaddres} mt-4 rounded-xl`}>
-                  <form onSubmit={(e) => handleLogin(e, 'fromClick', 'default', 'default')} id="login-form" className="max-w-xs lg:max-w-sm mx-auto rounded-sm p-6">
-                    <h1 className="text-lg lg:text-2xl mb-5 text-center">{langValue['LoginPlaylist']}</h1>
-
-                    <div className="mb-5">
-                      <label htmlFor="macAddress" className="block mb-2 text-sm lg:text-base text-white">MAC ADDRESS</label>
-
-
-                      <input
-                        type="text"
-                        id="macAddress"
-                        value={macAddress}
-                        onChange={(e) => {
-                          let input = e.target.value;
-                          input = input.replace(/[^a-zA-Z0-9]/g, '');
-                          const formatted = input.match(/.{1,2}/g)?.join(':') || '';
-                          setMacAddress(formatted);
-                        }}
-                        className="w-full h-full p-2.5 bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"
-                        required
-                      />
-
-                    </div>
-
-                    <div className="mb-5">
-                      <label htmlFor="deviceKey" className="block mb-2 text-sm lg:text-base text-white">DEVICE KEY</label>
-                      <input
-                        type="text"
-                        id="deviceKey"
-                        value={deviceKey}
-                        onChange={(e) => setDeviceKey(e.target.value)}
-                        className="w-full p-2.5 bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"
-                        required
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className={`${classes.login_btn} w-full py-2.5 text-white rounded-lg focus:ring focus:outline-none`}
-                    >
-                      {isLoading ?
-                        <i className='fas fa-spinner fa-spin text-2xl'></i>
-                        : langValue['Login']}
-
-                    </button>
-                  </form>
-                </div>
+                <h1 className={`${classes.managePlaylist_title} text-2xl lg:text-3xl text-center mt-[2rem]`}>{langValue['ManagePlaylist']}</h1>
               }
-              <div className={`${classes.parent_title}`}>
+              <div className={`container h-full ${isLoggedIn ? `text-center lg:mt-44 ${classes.wish_responive}` : ''}`}>
+                {isLoggedIn ? null :
+                  <div className={`${classes.macaddres} mt-4 rounded-xl`}>
+                    <form onSubmit={(e) => handleLogin(e, 'fromClick', 'default', 'default')} id="login-form" className="max-w-xs lg:max-w-sm mx-auto rounded-sm p-6">
+                      <h1 className="text-lg lg:text-2xl mb-5 text-center">{langValue['LoginPlaylist']}</h1>
+
+                      <div className="mb-5">
+                        <label htmlFor="macAddress" className="block mb-2 text-sm lg:text-base text-white">MAC ADDRESS</label>
 
 
-                <h1 className={`${classes.wish_title} text-3xl lg:text-4xl sm:text-2xl text-white font-bold max-w-3xl mx-auto`}>NovaTv</h1>
-                <p className="text-[21px] lg:text-2xl max-w-3xl mx-auto">
-                  {langValue['WishTvWebsite']}
-                </p>
+                        <input
+                          type="text"
+                          id="macAddress"
+                          value={macAddress}
+                          onChange={(e) => {
+                            let input = e.target.value;
+                            input = input.replace(/[^a-zA-Z0-9]/g, '');
+                            const formatted = input.match(/.{1,2}/g)?.join(':') || '';
+                            setMacAddress(formatted);
+                          }}
+                          className="w-full h-full p-2.5 bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"
+                          required
+                        />
 
+                      </div>
+
+                      <div className="mb-5">
+                        <label htmlFor="deviceKey" className="block mb-2 text-sm lg:text-base text-white">DEVICE KEY</label>
+                        <input
+                          type="text"
+                          id="deviceKey"
+                          value={deviceKey}
+                          onChange={(e) => setDeviceKey(e.target.value)}
+                          className="w-full p-2.5 bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"
+                          required
+                        />
+                      </div>
+
+                      <button
+                        type="submit"
+                        className={`${classes.login_btn} w-full py-2.5 text-white rounded-lg focus:ring focus:outline-none`}
+                      >
+                        {isLoading ?
+                          <i className='fas fa-spinner fa-spin text-2xl'></i>
+                          : langValue['Login']}
+
+                      </button>
+                    </form>
+                  </div>
+                }
+                <div className={`${classes.parent_title}`}>
+
+
+                  <h1 className={`${classes.wish_title} text-3xl lg:text-4xl sm:text-2xl text-white font-bold max-w-3xl mx-auto`}>NovaTv</h1>
+                  <p className="text-[21px] lg:text-2xl max-w-3xl mx-auto">
+                    {langValue['WishTvWebsite']}
+                  </p>
+
+                </div>
               </div>
             </div>
           </div>

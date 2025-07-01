@@ -23,7 +23,7 @@ export default function EditPlaylist() {
     }
 
     try {
-      const response = await fetch(`https://nova-psi-five.vercel.app/playList/update/${playlist._id}`, {
+      const response = await fetch(`https://novatv.onrender.com/playList/update/${playlist._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

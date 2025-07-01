@@ -22,7 +22,7 @@ export default function SwitchMac() {
         };
 
         try {
-            const response = await fetch('https://nova-psi-five.vercel.app/user/switch', {
+            const response = await fetch('https://novatv.onrender.com/user/switch', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
