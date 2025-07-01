@@ -17,8 +17,7 @@ export default function SwitchMac() {
         e.preventDefault(); // Prevent the default form submission behavior
 
         const body = {
-            macAddress: localStorage.getItem('macAddress'),
-            newMacAddress : mac_address
+            macAddress: mac_address,
         };
 
         try {
@@ -26,6 +25,7 @@ export default function SwitchMac() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'authorization': `novON0${localStorage.getItem('authToken')}`
                 },
                 body: JSON.stringify(body),
             });
