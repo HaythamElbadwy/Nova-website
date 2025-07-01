@@ -41,7 +41,9 @@ export default function AccountDetails() {
             });
             break;
           default:
-            toast('An error occurred. Please try again.');
+            toast('An error occurred. Please try again.',{
+              theme : 'dark'
+            });
         }
       }
 
@@ -63,7 +65,7 @@ export default function AccountDetails() {
         <div className="AccInfo flex flex-col gap-3 mt-16">
           <div className="macAddress AccDetails">
             <span className='text-[#3C3C3C] text-xl font-bold'>Mac Address:</span>
-            <span className='text-[#3C3C3C] font-medium'>{macAddress}</span>
+            <span className='text-[#3C3C3C] font-medium'>{macAddress ? macAddress : '-'}</span>
           </div>
           <div className="Status AccDetails">
             <span className='text-[#3C3C3C] text-xl font-bold'>{langValue['Status']}:</span>
@@ -72,11 +74,11 @@ export default function AccountDetails() {
           </div>
           <div className="creationDate AccDetails">
             <span className='text-[#3C3C3C] text-xl font-bold'>{langValue['CreationDate']}:</span>
-            <span className='text-[#3C3C3C] font-medium'>{startDate}</span>
+            <span className='text-[#3C3C3C] font-medium'>{startDate ? startDate : '-'}</span>
           </div>
           <div className="ExpirationDate AccDetails">
             <span className='text-[#3C3C3C] text-xl font-bold'>{langValue['ExpirationDate']}:</span>
-            <span className='text-[#3C3C3C] font-medium'>{endDate}</span>
+            <span className='text-[#3C3C3C] font-medium'>{endDate ? endDate : '-'}</span>
           </div>
         </div>
       </div>
