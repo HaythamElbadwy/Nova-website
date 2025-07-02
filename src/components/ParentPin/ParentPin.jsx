@@ -18,7 +18,7 @@ export default function ParentPin() {
 
         try {
             setIsLodaing(true)
-            const response = await fetch('https://nova-psi-five.vercel.app/lock/addParentPin', {
+            const response = await fetch('https://novatv.onrender.com/lock/addParentPin', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ export default function ParentPin() {
                 </b>
                 <br />
                 <center>
-                    <button type="submit" className="text-white bg-[#FF9D03] font-medium rounded-lg text-xm w-[205px]">
+                    <button type="submit" className="text-white bg-[#D8A529] font-medium rounded-lg text-xm w-[205px]">
 
                         {isLoading ? langValue['Saving...'] : langValue['Save']}
                     </button>
