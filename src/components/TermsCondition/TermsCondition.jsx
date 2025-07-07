@@ -52,7 +52,6 @@ export default function TermsCondition() {
     <>
       <div class={`${styles.term_conditions_parent}`}>
         <div class={`${styles.term_conditions}`}>
-          <h1>Terms and Conditions</h1>
 
         </div>
         <main class={`${styles.content}`}>
