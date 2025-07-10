@@ -61,9 +61,7 @@
 #sideBar ul li a{
   padding: 0.5rem 0.25rem;
 }
-#sideBar ul li a{
-  color: 0.5rem 0.25rem;
-}
+
 
 #sideBar ul li .icon-[tabler--logout-2]{
   color: red;
@@ -142,3 +140,4 @@
 input{
   border: none;
 }
+
